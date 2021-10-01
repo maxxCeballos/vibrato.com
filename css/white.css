@@ -33,13 +33,19 @@ body {
 }
 
 #init-header {
-    background: #FFFBB9;
-    border: 1px solid #999999;
+    background-image: -webkit-linear-gradient(left, #b800ff, #0040ff); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(left, #b800ff, #0040ff); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(left, #b800ff, #0040ff); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(left, #b800ff, #0040ff); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to right, #b800ff, #0040ff); /* Standard syntax; must be last */
+    color: white;
     padding: 20px;
 }
 
 #menu {
-    background: #CCCCCC;
+    background: #4560F6;
+    color: white;
+    margin-top: 5px;
     padding: 5px 15px;
 }
 
@@ -51,19 +57,19 @@ body {
 }
 
 #init-section {
-    float: left;
-    width: 660px;
+    /* float: left; */
+    text-align: center;
+    width: 90%;
     margin: 20px;
 }
 
-#panel {
+/* #panel {
     float: left;
-    width: 220px;
+    width: 210px;
     height: 675px;
     margin: 20px 0px;
     padding: 20px;
-    background: #CCCCCC;
-}
+} */
 
 #data-organization {
     clear: both;
@@ -73,10 +79,15 @@ body {
 }
 
 article {
-    background: #FFFBCC;
-    border: 1px solid #999999;
+    /* background: #F95A64; */
     padding: 20px;
     margin-bottom: 15px;
+}
+
+article h1 {
+    text-align: left;
+    margin-bottom: 15px;
+    color: #800080;
 }
 
 article footer {
