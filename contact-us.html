@@ -6,19 +6,46 @@
         <meta name="keywords" content="educacion, programacion, algoritmos, matematica, logica, estadistica">
         <title>Vibrato</title>
         <link rel="stylesheet" href="./css/white.css">
+        <script src="./js/contact-us.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Vibrato</h1><h4>    simplemente simplificación</h4>
-        </header>
-        <nav>
-            <ul>
-                <li>Inicio</li>
-                <li>Articulos</li>
-                <li>Tópicos</li>
-                <li>Nosotros</li>
-                <li>Contactanos</li>
-            </ul>
-        </nav>
+        <div id="init-wrapper">
+
+            <!-- *********** HEADER *********** -->
+            <header id="init-header">
+                <h1>Vibrato</h1><h4>    simplemente simplificación</h4>
+            </header>
+
+            <!-- *********** MENU *********** -->
+            <nav id="menu">
+                <ul>
+                    <li>Inicio</li>
+                    <li>Articulos</li>
+                    <li>Tópicos</li>
+                    <li>Nosotros</li>
+                    <li>Contactanos</li>
+                </ul>
+            </nav>
+
+            <!-- *********** SECTION *********** -->
+        <section>
+            <form id="form-contact-us" name="form-contact-us" method="GET" action="procesar.js">
+                <br><label for="contact-name">Nombre:</label>
+                <input type="text" pattern="[A-Za-z]{3,}" name="contact-name" id="contact-name" placeholder="Your Name">
+                <br><label for="contact-last-name">Apellido</label>
+                <input type="text" pattern="[A-Za-z]{3,}" name="contact-last-name" id="contact-last-name" placeholder="Your Last Name">
+                <br><label for="contact-email">Email:</label>
+                <input type="email" name="contact-email" id="contact-email" placeholder="email@domain.com" required title="Ingrese su email">
+                <br><label for="contact-quality">Calificás nuestro contenido? :) </label>
+                <br><input type="radio" name="contact-quality" value="1"> 1
+                <input type="radio" name="contact-quality" value="2"> 2
+                <input type="radio" name="contact-quality" value="3" checked> 3
+                <input type="radio" name="contact-quality" value="4"> 4
+                <input type="radio" name="contact-quality" value="5"> 5
+                <br><label for="contact-query">Tu consulta</label>
+                <br><textarea name="contact-query" id="contact-query" cols="30" rows="10" required></textarea>
+                <br><input type="button" id="enviar" value="Enviar">
+            </form>
+        </section>
     </body>
 </html>
