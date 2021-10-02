@@ -102,3 +102,13 @@ img {
 figcaption {
     font: italic 14px verdana, sans-serif;
 }
+
+#form-contact-us{
+    background: #4560F6;
+    margin: 100px;
+    padding: 10px;
+}
+
+form label,input {
+    float: left;
+}
