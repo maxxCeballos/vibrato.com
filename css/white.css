@@ -18,6 +18,7 @@ body {
     width: 960px;
     margin: 15px auto;
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /******* HEADER *******/
@@ -44,20 +45,11 @@ body {
 
 /******* NAV *******/
 
-#menu {
-
-}
-
-#menu li {
-    padding: 5px;
-    font: bold 14px verdana, sans-serif;
-}
-
 #menu-wrapper {
     background: #4560F6;
     color: white;
     margin-top: 5px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -108,7 +100,6 @@ article:not(article:last-child){
 .article-description {
     flex: 3;
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .article-title {
