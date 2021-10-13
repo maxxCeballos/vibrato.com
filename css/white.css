@@ -10,23 +10,6 @@
     src: url('../fonts/ChallengeShadow.ttf');
 }
 
-header, section, footer, article, figure, figcaption, hgroup{
-    display: block;
-}
-
-h1 {
-    font: bold 24px verdana, sans-serif;
-}
-
-h2 {
-    font: bold 18px verdana, sans-serif;
-}
-
-header h4 {
-    font: 14px verdana, sans-serif;
-    text-align: right;
-}
-
 body {
     text-align: center;
 }
@@ -35,7 +18,10 @@ body {
     width: 960px;
     margin: 15px auto;
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/******* HEADER *******/
 
 #init-header {
     background-image: -webkit-linear-gradient(left, #b800ff, #0040ff); /* For Chrome and Safari */
@@ -53,22 +39,17 @@ body {
 
 #init-header h4 {
     font: italic 14px sans-serif;
+    text-align: right;
 }
 
-#menu {
 
-}
-
-#menu li {
-    padding: 5px;
-    font: bold 14px verdana, sans-serif;
-}
+/******* NAV *******/
 
 #menu-wrapper {
     background: #4560F6;
     color: white;
     margin-top: 5px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -95,17 +76,12 @@ body {
     flex: 1;
 }
 
-#init-section {
-    text-align: center;
-    width: 90%;
-    margin: 20px;
-}
+/******* BODY INDEX *******/
 
-#data-organization {
-    clear: both;
-    text-align: center;
-    padding: 20px;
-    border-top: 2px solid #999999;
+#init-section {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
 }
 
 article {
@@ -113,24 +89,64 @@ article {
     margin-bottom: 15px;
 }
 
-article h1 {
+article:not(article:last-child){
+    border-bottom: 0.5px solid #F1F4F7;
+}
+
+.article-wrapper {
+    display: flex;
+}
+
+.article-description {
+    flex: 3;
+    position: relative;
+}
+
+.article-title {
+    margin: 10px;
     text-align: left;
-    margin-bottom: 15px;
-    color: #800080;
+}
+
+.article-title h4 {
+    margin: 15px;
+    font-weight: normal;
+    font-size: 14px;
 }
 
 article footer {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
     text-align: right;
+    color: #D2BEDF;
+}
+
+.article-image {
+    flex: 1;
 }
 
 img {
-    max-width:100%;
-    height: 200px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    width: 250px;
+    height: 150px;
 }
 
-figcaption {
-    font: italic 14px verdana, sans-serif;
+
+
+/******* FOOTER *******/
+
+#data-organization {
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #999999;
 }
+
+
+/******* FORMS *******/
 
 #form-contact-us{
     background: #4560F6;
