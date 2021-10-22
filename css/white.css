@@ -14,6 +14,10 @@ body {
     text-align: center;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 #init-wrapper {
     width: 960px;
     margin: 15px auto;
@@ -133,6 +137,33 @@ img {
     height: 150px;
 }
 
+/******* BODY TOPICS *******/
+
+#topics-section {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.topic-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.topic-card {
+    flex: 1;
+}
+
+.topic-card header {
+    margin: 20px;
+}
+
+.topic-card img {
+    margin: auto;
+    height: 250px;
+}
 
 
 /******* FOOTER *******/
