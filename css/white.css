@@ -50,14 +50,24 @@ a:link {
 /******* NAV *******/
 
 #menu-wrapper {
-    background: #4560F6;
-    color: white;
+    /* background: #4560F6; */
+    font-weight: bold;
+    color: #33067a;
     margin-top: 5px;
     padding: 10px 15px;
     display: flex;
     flex-direction: row;
     list-style: none;
     text-align: center;
+}
+
+#menu-wrapper a:visited {
+    color: #33067a;
+}
+
+#menu-wrapper a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: #b800ff;
 }
 
 #inicio {
@@ -91,6 +101,10 @@ a:link {
 article {
     padding: 20px;
     margin-bottom: 15px;
+}
+
+.article-description a:visited {
+    color: black;
 }
 
 article:not(article:last-child){
