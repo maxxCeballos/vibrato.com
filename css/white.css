@@ -19,8 +19,8 @@ a:link {
 }
 
 #init-wrapper {
-    width: 960px;
-    margin: 15px auto;
+    width: 70%;
+    margin: 40px auto;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -35,6 +35,8 @@ a:link {
     background-image:         linear-gradient(to right, #b800ff, #0040ff); /* Standard syntax; must be last */
     color: white;
     padding: 20px;
+    height: 80px;
+    margin-bottom: 20px;
 }
 
 #init-header h1{
@@ -54,6 +56,7 @@ a:link {
     font-weight: bold;
     color: #33067a;
     margin-top: 5px;
+    margin-bottom: 60px;
     padding: 10px 15px;
     display: flex;
     flex-direction: row;
