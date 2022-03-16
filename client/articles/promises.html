@@ -1,0 +1,88 @@
+
+                <div>
+                    <div>
+                        <header class="article-title">
+                            <hgroup>
+                                <h2>Promises</h2>
+                                <h4>Las callbacks son los bloques de construcción de bajo nivel de la programación asíncrona en Node.js, pero están lejos de ser developer-friendly.</h4>
+                            </hgroup>
+                        </header>
+                    </div>
+                    <div class="article-body">
+                        <p>
+                            El primer paso hacia una mejor experiencia de código asíncrono son las promises, un objeto que "lleva" el estado y el resultado final de una operación asíncrona. Una promise se puede encadenar fácilmente para implementar flujos de ejecución secuencial y se puede mover como cualquier otro objeto. Las promises simplifican mucho el código asíncrono; sin embargo, aún queda margen de mejora. Entonces, en un intento de hacer que el flujo de ejecución sea lo más simple posible, se introdujo una nueva construcción, llamada async/await, que finalmente puede hacer que el código asíncrono luzca como código síncrono.
+Sin embargo, async/await se construye sobre las promises, asi como las promises se construyen sobre las callbacks. Por lo tanto, es importante que conozcamos y dominemos, para abordar nuestros problemas de programación asíncrona con el enfoque correcto.
+                        </p>
+
+                        <p>
+                            Las promises son parte del estándar ECMAScript 2015 (o ES6) y han estado disponibles de forma nativa en Node.js desde la versión 4.
+
+                            Las promises representan un gran paso adelante para proporcionar una alternativa sólida al continuation-passing style de las callbacks para propagar un resultado asíncrono.
+                        </p>
+
+                        <section class="article-section">
+                            <h3>Promise constructor</h3>
+                            <p>
+                                Una promise es un objeto que encarna el resultado final (o error) de una operación asíncrona. En la jerga de las promises, decimos que una Promise está pendiente cuando la operación asíncrona aún no está completa, se cumple cuando la operación se completa con éxito y se rechaza cuando la operación termina con un error. Una vez que una Promise se cumple (resolve) o se rechaza (rejected), se considera resuelta (settled).
+                                Para recibir el valor de resolve o el error asociado con el reject, podemos usar el método then() de una instancia de Promise. A continuación observamos su constructor:
+                            </p>
+                            
+                            <div>
+                                <div  class="anotation-code">
+                                    <span class="text-anotation-code">new Promise( ( resolve, reject ) => { argument function } );</span>
+                                </div>
+                                <div class="javascript-code">
+                                    <img src="./articles/promise-constructor.jpg">
+                                </div>
+                            </div>
+                            
+                            <p>
+                                Este constructor crea una nueva instancia de una Promise que resuelve o rejecta segun el comportamiento de la función proporcionada como argumento. Esta función proporcionada recibe dos argumentos:
+                                <ul class="anotation-code text-anotation-code">
+                                    <li>resolve(obj): Esta es una funcion que, cuando es invocada, cumplirá la promise con el valor de cumplimiento proporcionado, en este caso un string.</li>
+                                    <li>reject(err): Esta función rejecta la promise con un error como motivo. Es una convención que err sea una instancia de la clase Error</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Podemos notar cómo el constructor Promise envuelve todo el cuerpo de la función, este es un patrón de código frecuente que verá al crear una Promise desde cero.
+                            </p>
+                        </section>
+
+                        <section class="article-section">
+                            <h3>Promise Signature</h3>
+                        
+                            <p>
+                                Ahora viene la mejor parte, en el siguiente código, asyncOperationPromise() devuelve una Promise, que luego podemos usar para recibir el valor de cumplimiento o rechazo del resultado final de la función. Hasta ahora, parece que no está sucediendo nada importante, pero una propiedad crucial del método then() es que devuelve sincrónicamente otra Promise.
+                                Este comportamiento nos permite construir cadenas de promesas. Además, si no especificamos un controlador onFulfilled o onRejected, el valor de cumplimiento o rechazo se reenvía automáticamente a la siguiente promise de la cadena. Esto nos permite, por ejemplo, propagar automáticamente errores a lo largo de toda la cadena hasta que sean detectados por un controlador onRejected.
+                                La firma de una promise es:
+                            </p>
+
+                            <div  class="anotation-code">
+                                <span class="text-anotation-code">promise.then(onFulfilled, onRejected);</span>
+                            </div>                            
+                            <div class="javascript-code">
+                                <img src="./articles/promise-signature.jpg">
+                            </div>
+                            
+
+                            <p>
+                                Si se lanza una excepción (usando la declaración throw) en el controlador onFulfill() u onRejected(), la Promise que viaja por el método then() se rechazará automáticamente, con la excepción que se arrojó como razón de rechazo. 
+                                Esta es una tremenda ventaja sobre CPS (continuation-passing style), ya que significa que con las promesas, las excepciones se propagarán automáticamente a lo largo de la cadena, y la declaración throw se volverá finalmente usable.
+                                A continuación podemos observar una cadena de promises:
+                            </p>
+
+                            <div class="javascript-code">
+                                <img src="./articles/promise-chain.jpg">
+                            </div>
+
+                            <p>
+                                La especificación de Promises establece que las callbacks onFulfilled y onRejected del método then() deben invocarse solo y solo una vez. Una implementación de promises asegura que incluso si llamamos a resolve o reject varias veces, la promise se cumple o se rechaza solo una vez.
+                            </p>
+                        </section>
+
+                        
+                    </div>
+                    
+                    <footer class="article-tags-footer"><small class="article-tag">javascript</small><small class="article-tag">asynchronous</small></footer>
+                </div>

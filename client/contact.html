@@ -1,0 +1,74 @@
+
+<form id="form-contact-us" name="form-contact-us" enctype="application/x-www-form-urlencoded">
+    <fieldset>
+        <legend>Tus datos</legend>
+        <ol>
+            <li>
+                <!-- el valor de for de la etiqueta <label> debe ser el mismo que el valor del atributo id del elemento al cual esta etiqueta está relacionada -->
+                <label for="contact-name">Nombre:</label>
+                <input type="text" pattern="[A-Za-z]{3,}" name="contact-name" id="contact-name" placeholder="Your Name" required autofocus>
+            </li>
+            <li>
+                <label for="contact-last-name">Apellido</label>
+                <input type="text" pattern="[A-Za-z]{3,}" name="contact-last-name" id="contact-last-name" placeholder="Your Last Name" required>        
+            </li>
+            <li>
+                <label for="contact-email">Email:</label>
+                <input type="email" name="contact-email" id="contact-email" placeholder="email@domain.com" required>
+            </li>
+        </ol>
+    </fieldset>
+    
+    <fieldset>
+        <!-- CHECKBOX -->
+        <legend>Cuales son tus tópicos preferidos?</legend>
+        <ol>
+            <li>
+                <input type="checkbox" name="algorithm-favorite" id="algorithm-favorite" value="Algoritmos">
+                <label for="algorithm-favorite">Javascript</label>
+            </li>
+            <li>
+                <input type="checkbox" name="ingenieria-favorite" id="ingenieria-favorite" value="Ingenieria de Software">
+                <label for="ingenieria-favorite">Ingenieria de Software</label>
+            </li>
+            <li>
+                <input type="checkbox" name="logica-favorite" id="logica-favorite" value="Logica">
+                <label for="logica-favorite">Inteligencia Artificial</label>
+            </li>
+            <li>
+                <input type="checkbox" name="math-favorite" id="math-favorite" value="Matematica">
+                <label for="math-favorite">Matemática y Estadística</label>
+            </li>
+        </ol>
+    </fieldset>
+    
+    <fieldset>
+        <!-- RADIO BUTTON -->
+        <legend>Cómo calificarías el contenido?</legend>
+        <ol>
+            <li>
+                <input id="malo" type="radio" name="contact-quality" value="malo">
+                <label for="malo">malo</label>
+            </li>
+            <li>
+                <input id="regular" type="radio" name="contact-quality" value="regular" checked>
+                <label for="regular">regular</label>
+            </li>
+            <li>
+                <input id="bueno" type="radio" name="contact-quality" value="bueno">
+                <label for="bueno">bueno</label>
+            </li>
+        </ol>
+    </fieldset>
+    
+
+    <fieldset>
+        <legend>Escribime!</legend>
+        <textarea name="contact-query" id="contact-query" cols="60" rows="10" required></textarea>
+    </fieldset>
+
+    <fieldset>
+        <button type="submit">Enviar</button>
+    </fieldset>
+
+</form>
